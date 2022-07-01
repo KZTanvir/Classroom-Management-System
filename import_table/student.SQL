@@ -1,0 +1,2 @@
+INSERT INTO student VALUES
+(1,'TANVIR',58,9,2022);
