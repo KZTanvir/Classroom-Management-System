@@ -7,5 +7,5 @@ CREATE TABLE notice_board
     n_date date,
     s_class VARCHAR(30) DEFAULT 'ALL',
     PRIMARY KEY(n_id),
-    FOREIGN KEY(teacher_id) REFERENCES teacher(t_id) ON DELETE CASCADE
+    FOREIGN KEY(teacher_id) REFERENCES teacher(t_id)
 );

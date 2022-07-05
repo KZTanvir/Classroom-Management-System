@@ -1,0 +1,11 @@
+INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (1,'TANVIR','senior',2059);
+INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (2,'ALICIA','senior',5611);
+INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (3,'GWEN','senior',5691);
+INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (4,'JOYCE','senior',5682);
+INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (5,'THEODOR','senior',5540);
+INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (6,'ZAMAN','assistant',2059);
+INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (7,'ALICE','senior',5611);
+INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (8,'GWENOLIN','junior',5691);
+INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (9,'JOYCEER','senior',5682);
+INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (10,'THEODOR','senior',5540);
+describe teacher;
