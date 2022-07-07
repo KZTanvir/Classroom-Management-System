@@ -1,16 +1,9 @@
 CREATE TABLE u_users
 (
-    u_id INT NOT NULL,
-    u_name VARCHAR(30) NOT NULL,
-    u_type VARCHAR(10) NOT NULL,
-    type_id INT NOT NULL,
-    u_email VARCHAR(20) UNIQUE,
+    u_id INT NOT NULL, --primary key--
+    u_name VARCHAR(30) NOT NULL,--user name triggered from student and teachers table
+    u_type VARCHAR(10) NOT NULL,--triggered from teacher or student(teacher,student)
+    type_id INT NOT NULL,--teacher or student id based on the type
     u_status VARCHAR(10) DEFAULT 'PENDING',
-    email_status VARCHAR(10) DEFAULT 'PENDING',
-    u_gender VARCHAR(10) NOT NULL,
-    PRIMARY KEY(u_id),
-    FOREIGN KEY(type_id) REFERENCES student(s_id) ON DELETE CASCADE,
-    FOREIGN KEY(type_id) REFERENCES teacher(t_id) ON DELETE CASCADE,
-    FOREIGN KEY(u_name) REFERENCES student(s_name) ON DELETE CASCADE,
-    FOREIGN KEY(u_name) REFERENCES teacher(t_name) ON DELETE CASCADE
+    PRIMARY KEY(u_id)
 );

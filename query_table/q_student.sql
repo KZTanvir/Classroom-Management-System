@@ -1,0 +1,1 @@
+INSERT INTO student VALUES (u_users_seq.NEXTVAL,'1','HABIBUR RAHMAN','REBEKA SULTANA','sds','sd',NULL,55,9,2017);
