@@ -17,11 +17,26 @@ START WITH 1
   INCREMENT BY 1
   CACHE 10;
 
+/********** SEQUENCE FOR NEWSFEED **********/
+DROP SEQUENCE newsfeed_seq;
+CREATE SEQUENCE newsfeed_seq
+START WITH 1
+    MINVALUE 1
+    INCREMENT BY 1
+    CACHE 10;
+
+/********** SEQUENCE FOR NEWSFEED COMMENT **********/
+DROP SEQUENCE newsfeed_comment_seq;
+CREATE SEQUENCE newsfeed_comment_seq
+START WITH 1
+    MINVALUE 1
+    INCREMENT BY 1
+    CACHE 10;
 /************************************ ALL THE TRIGGERS ************************************/
 
 /****************** TRIGGERS FOR STUDENT TABLE ******************/
 --trigger for table insert TANVIR.STUDENT
-CREATE OR REPLACE TRIGGER student_insert_trigger
+CREATE OR REPLACE TRIGGER student_insert
     AFTER
     INSERT
     ON student
@@ -30,11 +45,18 @@ BEGIN
    INSERT INTO all_users
    VALUES(:NEW.student_id,:NEW.student_name, 'STUDENT', NULL, DEFAULT);
    INSERT INTO newsfeed
-   VALUES(/*have to give values for notice board auto post about new registration*/NULL);
+   VALUES(
+    newsfeed_seq.NEXTVAL,
+    :NEW.student_id,
+    'NEW REGISTRATION',
+    'Student Registered Successfully!',
+    :NEW.student_name,
+    SYSDATE
+    );
 END;
 
 --trigger for table delete TANVIR.STUDENT
-CREATE OR REPLACE TRIGGER student_delete_trigger
+CREATE OR REPLACE TRIGGER student_delete
     BEFORE
     DELETE
     ON student
@@ -47,14 +69,14 @@ BEGIN
 END;
 
 --trigger for table update TANVIR.STUDENT
-CREATE OR REPLACE TRIGGER student_update_trigger
+CREATE OR REPLACE TRIGGER student_update
     AFTER
     UPDATE OF student_name
     ON student
     FOR EACH ROW
 BEGIN
     UPDATE all_users
-    SET all_users.user_name = :NEW.student_name
+    SET all_users.user_name = :NEW.student_name, all_users.user_status = 'UPDATED'
     WHERE
         :OLD.student_name = all_users.user_name;
 END;
@@ -62,7 +84,7 @@ END;
 
 /****************** TRIGGERS FOR TEACHER TABLE ******************/
 --trigger for table insert TANVIR.TEACHER
-CREATE OR REPLACE TRIGGER teacher_insert_trigger
+CREATE OR REPLACE TRIGGER teacher_insert
     AFTER
     INSERT
     ON teacher

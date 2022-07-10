@@ -8,5 +8,6 @@ CREATE TABLE notice_board
     teacher_name VARCHAR(30) NOT NULL,
     notice_subject VARCHAR(10) DEFAULT 'ALL',
     PRIMARY KEY(notice_id),
-    FOREIGN KEY(teacher_id) REFERENCES teacher(t_id)
+    FOREIGN KEY(teacher_id) REFERENCES teacher(teacher_id),
+    FOREIGN KEY(teacher_name) REFERENCES teacher(teahcer_name)
 );
