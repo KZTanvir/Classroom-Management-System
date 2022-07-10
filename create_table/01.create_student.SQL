@@ -1,15 +1,15 @@
 CREATE TABLE student
-(   s_id INT NOT NULL,--primary key
-    s_name VARCHAR(30) NOT NULL UNIQUE,--foreign key
-    s_first_name VARCHAR(30),--user trigger
-    s_last_name VARCHAR(30),--user trigger
-    s_father_name VARCHAR(30),--user trigger
-    s_mother_name VARCHAR(30),--user trigger
-    s_address VARCHAR(100),--user trigger
-    s_roll INT NOT NULL,
-    s_class VARCHAR(30) NOT NULL,
-    s_year INT NOT NULL,
-    PRIMARY KEY(s_id) --primary key declaretion--
+(   student_id INT NOT NULL,--primary key
+    student_name VARCHAR(30) NOT NULL UNIQUE,--foreign key
+    student_first_name VARCHAR(30),--user trigger
+    student_last_name VARCHAR(30),--user trigger
+    student_father_name VARCHAR(30),--user trigger
+    student_mother_name VARCHAR(30),--user trigger
+    student_address VARCHAR(100),--user trigger
+    student_roll INT NOT NULL,
+    student_class VARCHAR(30) NOT NULL,
+    student_year INT NOT NULL,
+    PRIMARY KEY(student_id) --primary key declaretion--
 );
 
 
