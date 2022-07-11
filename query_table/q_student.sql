@@ -13,4 +13,4 @@ INSERT INTO teacher VALUES (all_users_seq.NEXTVAL,'Jf','Tanvir','Zaman',NULL,DEF
 INSERT INTO teacher VALUES (all_users_seq.NEXTVAL,'Jss','Tanvir','Zaman',NULL,DEFAULT,DEFAULT,10);
 INSERT INTO teacher VALUES (all_users_seq.NEXTVAL,'Jks','Tanvir','Zaman',NULL,DEFAULT,DEFAULT,10);
 INSERT INTO teacher VALUES (all_users_seq.NEXTVAL,'Jfs','Tanvir','Zaman',NULL,DEFAULT,DEFAULT,10);
-INSERT INTO teacher VALUES (all_users_seq.NEXTVAL,'Jss','Tanvir','Zaman',NULL,DEFAULT,DEFAULT,10);
+INSERT INTO teacher VALUES (all_users_seq.NEXTVAL,'Jsfs','Tanvir','Zaman',NULL,DEFAULT,DEFAULT,10);

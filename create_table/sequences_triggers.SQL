@@ -35,6 +35,18 @@ START WITH 1
 /************************************ ALL THE TRIGGERS ************************************/
 
 /****************** TRIGGERS FOR STUDENT TABLE ******************/
+
+--trigger for table insert TANVIR.STUDENT for auto student id insertion
+
+CREATE OR REPLACE TRIGGER student_insert_id
+    BEFORE
+    INSERT
+    ON student
+    FOR EACH ROW
+BEGIN
+   :NEW.student_id := all_users_seq.NEXTVAL;
+END;
+
 --trigger for table insert TANVIR.STUDENT
 CREATE OR REPLACE TRIGGER student_insert
     AFTER
@@ -48,10 +60,11 @@ BEGIN
    VALUES(
     newsfeed_seq.NEXTVAL,
     :NEW.student_id,
-    'NEW REGISTRATION',
+    'NEW REGISTRATION!',
     'Student Registered Successfully!',
     :NEW.student_name,
-    SYSDATE
+    SYSDATE,
+    0
     );
 END;
 
@@ -81,8 +94,8 @@ BEGIN
         :OLD.student_name = all_users.user_name;
 END;
 
-
 /****************** TRIGGERS FOR TEACHER TABLE ******************/
+
 --trigger for table insert TANVIR.TEACHER
 CREATE OR REPLACE TRIGGER teacher_insert
     AFTER
@@ -113,7 +126,22 @@ CREATE OR REPLACE TRIGGER teacher_update
     FOR EACH ROW
 BEGIN
     UPDATE all_users
-    SET all_users.user_name = :NEW.teacher_name
+    SET all_users.user_name = :NEW.teacher_name, all_users.user_status = 'UPDATED'
     WHERE
         :OLD.teacher_name = all_users.user_name;
+END;
+
+/****************** TRIGGERS FOR ALL_USERS TABLE ******************/
+
+--trigger for table update TANVIR.ALL_USERS TO NEWSFEED
+CREATE OR REPLACE TRIGGER all_users_update_newsfeed
+    AFTER
+    UPDATE OF user_name
+    ON all_users
+    FOR EACH ROW
+BEGIN
+    UPDATE newsfeed
+    SET newsfeed.feed_creator = :NEW.user_name
+    WHERE
+        :OLD.user_name = newsfeed.feed_creator;
 END;

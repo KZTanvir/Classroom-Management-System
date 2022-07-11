@@ -1,6 +1,6 @@
 CREATE TABLE student
 (   student_id INT NOT NULL,--primary key
-    student_name VARCHAR(30) NOT NULL UNIQUE,--foreign key
+    student_name VARCHAR(30) NOT NULL UNIQUE,
     student_first_name VARCHAR(30),--user trigger
     student_last_name VARCHAR(30),--user trigger
     student_father_name VARCHAR(30),--user trigger
