@@ -1,6 +1,8 @@
+DROP TABLE result;
 DROP TABLE message;
-DROP TABLE message_groups;
-DROP TABLE u_users;
+DROP TABLE newsfeed_comment;
+DROP TABLE newsfeed;
 DROP TABLE notice_board;
+DROP TABLE all_users;
 DROP TABLE teacher;
 DROP TABLE student;

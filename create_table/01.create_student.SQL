@@ -9,7 +9,7 @@ CREATE TABLE student
     student_roll INT NOT NULL,
     student_class VARCHAR(30) NOT NULL,
     student_year INT NOT NULL,
-    PRIMARY KEY(student_id) --primary key declaretion--
+    PRIMARY KEY(student_id) --primary key declaration--
 );
 
 

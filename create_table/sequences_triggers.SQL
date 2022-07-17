@@ -55,17 +55,7 @@ CREATE OR REPLACE TRIGGER student_insert
     FOR EACH ROW
 BEGIN
    INSERT INTO all_users
-   VALUES(:NEW.student_id,:NEW.student_name, 'STUDENT', NULL, DEFAULT);
-   INSERT INTO newsfeed
-   VALUES(
-    newsfeed_seq.NEXTVAL,
-    :NEW.student_id,
-    'NEW REGISTRATION!',
-    'Student Registered Successfully!',
-    :NEW.student_name,
-    SYSDATE,
-    0
-    );
+   VALUES(:NEW.student_id,:NEW.student_name, 'STUDENT', DEFAULT);
 END;
 
 --trigger for table delete TANVIR.STUDENT
@@ -96,6 +86,17 @@ END;
 
 /****************** TRIGGERS FOR TEACHER TABLE ******************/
 
+--trigger for table insert TANVIR.TEACHER for auto USER id insertion
+
+CREATE OR REPLACE TRIGGER teacher_insert_id
+    BEFORE
+    INSERT
+    ON teacher
+    FOR EACH ROW
+BEGIN
+   :NEW.teacher_id := all_users_seq.NEXTVAL;
+END;
+
 --trigger for table insert TANVIR.TEACHER
 CREATE OR REPLACE TRIGGER teacher_insert
     AFTER
@@ -104,7 +105,7 @@ CREATE OR REPLACE TRIGGER teacher_insert
     FOR EACH ROW
 BEGIN
    INSERT INTO all_users
-   VALUES(:NEW.teacher_id,:NEW.teacher_name, 'TEACHER', NULL, DEFAULT);
+   VALUES(:NEW.teacher_id,:NEW.teacher_name, 'TEACHER', DEFAULT);
 END;
 --trigger for table delete TANVIR.TEACHER
 CREATE OR REPLACE TRIGGER teacher_delete
@@ -133,6 +134,40 @@ END;
 
 /****************** TRIGGERS FOR ALL_USERS TABLE ******************/
 
+-- TRIGGER FOR INSERT NEW USERS REGISTRATION IN NEWSFEED
+CREATE OR REPLACE TRIGGER all_users_registration
+    AFTER
+    INSERT
+    ON all_users
+    FOR EACH ROW
+BEGIN
+    IF :NEW.user_type = 'STUDENT' THEN
+        INSERT INTO newsfeed
+        VALUES
+        (
+        newsfeed_seq.NEXTVAL,
+        :NEW.user_id,
+        :NEW.user_name,
+        'STUDENT REGISTRATION!',
+        'Student Registered Successfully!',
+        SYSDATE,
+        0
+        );
+    ELSIF :NEW.user_type = 'TEAHCER' THEN
+        INSERT INTO newsfeed
+        VALUES
+        (
+        newsfeed_seq.NEXTVAL,
+        :NEW.user_id,
+        :NEW.user_name,
+        'TEACHER REGISTRATION!',
+        'A Teacher Registered Successfully!',
+        SYSDATE,
+        0
+        );
+    END IF;
+END;
+
 --trigger for table update TANVIR.ALL_USERS TO NEWSFEED
 CREATE OR REPLACE TRIGGER all_users_update_newsfeed
     AFTER
@@ -144,4 +179,19 @@ BEGIN
     SET newsfeed.feed_creator = :NEW.user_name
     WHERE
         :OLD.user_name = newsfeed.feed_creator;
+END;
+
+/****************** TRIGGERS FOR NEWSFEED_COMMENT TABLE ******************/
+
+--trigger for table update TANVIR.NEWSFEED_COMMENT TO NEWSFEED
+CREATE OR REPLACE TRIGGER newsfeed_comment_newsfeed
+    AFTER
+    INSERT
+    ON newsfeed_comment
+    FOR EACH ROW
+BEGIN
+    UPDATE newsfeed
+    SET newsfeed.comments = newsfeed.comments+1
+    WHERE
+        :NEW.user_name = newsfeed.feed_creator;
 END;

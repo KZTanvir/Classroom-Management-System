@@ -5,5 +5,6 @@ CREATE TABLE message
     receiver_id INT NOT NULL,
     message_sent VARCHAR2(300) NOT NULL,
     message_date DATE NOT NULL,
+    message_status VARCHAR2(6)DEFAULT 'UNSEEN',
     PRIMARY KEY(message_id)
 )
