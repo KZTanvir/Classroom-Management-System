@@ -1,11 +1,113 @@
-INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (1,'TANVIR','senior',2059);
-INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (2,'ALICIA','senior',5611);
-INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (3,'GWEN','senior',5691);
-INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (4,'JOYCE','senior',5682);
-INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (5,'THEODOR','senior',5540);
-INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (6,'ZAMAN','assistant',2059);
-INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (7,'ALICE','senior',5611);
-INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (8,'GWENOLIN','junior',5691);
-INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (9,'JOYCEER','senior',5682);
-INSERT INTO teacher(t_id,t_name,t_role,t_code) VALUES (10,'THEODOR','senior',5540);
-describe teacher;
+INSERT INTO teacher 
+    VALUES (
+    NULL,
+    'TANVIR_t',
+    NULL,
+    NULL,
+    NULL,
+    'senior',
+    DEFAULT,
+    2059
+    );
+INSERT INTO teacher 
+    VALUES (
+    NULL,
+    'ALICIA_t',
+    NULL,
+    NULL,
+    NULL,
+    'senior',
+    DEFAULT,
+    5611
+    );
+INSERT INTO teacher 
+    VALUES (
+    NULL,
+    'GWEN_t',
+    NULL,
+    NULL,
+    NULL,
+    'senior',
+    DEFAULT,
+    5691
+    );
+INSERT INTO teacher 
+    VALUES (
+    NULL,
+    'JOYCE_t',
+    NULL,
+    NULL,
+    NULL,
+    'senior',
+    DEFAULT,
+    5682
+    );
+INSERT INTO teacher 
+    VALUES (
+    NULL,
+    'THEODOR_t',
+    NULL,
+    NULL,
+    NULL,
+    'senior',
+    DEFAULT,
+    5540
+    );
+INSERT INTO teacher 
+    VALUES (
+    NULL,
+    'ZAMAN_t',
+    NULL,
+    NULL,
+    NULL,
+    'assistant',
+    DEFAULT,
+    2059
+    );
+INSERT INTO teacher 
+    VALUES (
+    NULL,
+    'ALICE_t',
+    NULL,
+    NULL,
+    NULL,
+    'senior',
+    DEFAULT,
+    5611
+    );
+INSERT INTO teacher 
+    VALUES (
+    NULL,
+    'GWENOLIN_t',
+    NULL,
+    NULL,
+    NULL,
+    'junior',
+    DEFAULT,
+    5691
+    );
+INSERT INTO teacher 
+    VALUES (
+    NULL,
+    'JOYCEER_t',
+    NULL,
+    NULL,
+    NULL,
+    'senior',
+    DEFAULT,
+    5682
+    );
+INSERT INTO teacher 
+    VALUES (
+    NULL,
+    'THEODOR_t',
+    NULL,
+    NULL,
+    NULL,
+    'senior',
+    DEFAULT,
+    5540
+    );
+
+DESCRIBE teacher;
+SELECT * FROM teacher;
