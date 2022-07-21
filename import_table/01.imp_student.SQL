@@ -95,7 +95,7 @@ INSERT INTO student
     'GWEN TENISON',
     'NEW YORK',
     15,
-    6,
+    7,
     2022
     );
 INSERT INTO student 
@@ -109,6 +109,3 @@ INSERT INTO student
     5,
     2010
     );
-
-DESCRIBE student;
-SELECT * FROM student;

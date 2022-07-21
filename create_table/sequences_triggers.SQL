@@ -32,6 +32,13 @@ START WITH 1
     MINVALUE 1
     INCREMENT BY 1
     CACHE 10;
+/********** SEQUENCE FOR MESSAGE **********/
+DROP SEQUENCE message_seq;
+CREATE SEQUENCE message_seq
+START WITH 1
+    MINVALUE 1
+    INCREMENT BY 1
+    CACHE 10;
 /************************************ ALL THE TRIGGERS ************************************/
 
 /****************** TRIGGERS FOR STUDENT TABLE ******************/
@@ -44,7 +51,10 @@ CREATE OR REPLACE TRIGGER student_insert_id
     ON student
     FOR EACH ROW
 BEGIN
+   IF :NEW.student_id IS NULL THEN
    :NEW.student_id := all_users_seq.NEXTVAL;
+   END IF;
+   :NEW.student_name := :NEW.student_name || '_' || :NEW.student_roll;
 END;
 
 --trigger for table insert TANVIR.STUDENT
@@ -94,7 +104,10 @@ CREATE OR REPLACE TRIGGER teacher_insert_id
     ON teacher
     FOR EACH ROW
 BEGIN
+    IF :NEW.teacher_id IS NULL THEN
    :NEW.teacher_id := all_users_seq.NEXTVAL;
+   END IF;
+   :NEW.teacher_name := :NEW.teacher_name || '#' || :NEW.teacher_id;
 END;
 
 --trigger for table insert TANVIR.TEACHER
@@ -153,7 +166,7 @@ BEGIN
         SYSDATE,
         0
         );
-    ELSIF :NEW.user_type = 'TEAHCER' THEN
+    ELSIF :NEW.user_type = 'TEACHER' THEN
         INSERT INTO newsfeed
         VALUES
         (
@@ -193,5 +206,5 @@ BEGIN
     UPDATE newsfeed
     SET newsfeed.comments = newsfeed.comments+1
     WHERE
-        :NEW.user_name = newsfeed.feed_creator;
+        :NEW.feed_id = newsfeed.feed_id;
 END;

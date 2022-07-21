@@ -1,7 +1,7 @@
 INSERT INTO teacher 
     VALUES (
     NULL,
-    'TANVIR_t',
+    'TANVIR',
     NULL,
     NULL,
     NULL,
@@ -12,7 +12,7 @@ INSERT INTO teacher
 INSERT INTO teacher 
     VALUES (
     NULL,
-    'ALICIA_t',
+    'ALICIA',
     NULL,
     NULL,
     NULL,
@@ -23,7 +23,7 @@ INSERT INTO teacher
 INSERT INTO teacher 
     VALUES (
     NULL,
-    'GWEN_t',
+    'GWEN',
     NULL,
     NULL,
     NULL,
@@ -34,7 +34,7 @@ INSERT INTO teacher
 INSERT INTO teacher 
     VALUES (
     NULL,
-    'JOYCE_t',
+    'JOYCE',
     NULL,
     NULL,
     NULL,
@@ -45,7 +45,7 @@ INSERT INTO teacher
 INSERT INTO teacher 
     VALUES (
     NULL,
-    'THEODOR_t',
+    'THEODOR',
     NULL,
     NULL,
     NULL,
@@ -56,7 +56,7 @@ INSERT INTO teacher
 INSERT INTO teacher 
     VALUES (
     NULL,
-    'ZAMAN_t',
+    'ZAMAN',
     NULL,
     NULL,
     NULL,
@@ -67,7 +67,7 @@ INSERT INTO teacher
 INSERT INTO teacher 
     VALUES (
     NULL,
-    'ALICE_t',
+    'ALICE',
     NULL,
     NULL,
     NULL,
@@ -78,7 +78,7 @@ INSERT INTO teacher
 INSERT INTO teacher 
     VALUES (
     NULL,
-    'GWENOLIN_t',
+    'GWENOLIN',
     NULL,
     NULL,
     NULL,
@@ -89,7 +89,7 @@ INSERT INTO teacher
 INSERT INTO teacher 
     VALUES (
     NULL,
-    'JOYCEER_t',
+    'JOYCEER',
     NULL,
     NULL,
     NULL,
@@ -100,7 +100,7 @@ INSERT INTO teacher
 INSERT INTO teacher 
     VALUES (
     NULL,
-    'THEODOR_t',
+    'THEODOR',
     NULL,
     NULL,
     NULL,
@@ -108,6 +108,3 @@ INSERT INTO teacher
     DEFAULT,
     5540
     );
-
-DESCRIBE teacher;
-SELECT * FROM teacher;
