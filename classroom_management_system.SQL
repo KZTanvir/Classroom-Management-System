@@ -22,4 +22,6 @@ ID:201400059
 @import_table\05.imp_newsfeed.SQL
 @import_table\06.imp_newsfeed_comment.SQL
 @import_table\07.imp_message.SQL
+@import_table\08.imp_result.SQL
+COMMIT;
 EXIT;  --the script exits here--

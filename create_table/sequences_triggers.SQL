@@ -39,6 +39,13 @@ START WITH 1
     MINVALUE 1
     INCREMENT BY 1
     CACHE 10;
+/********** SEQUENCE FOR RESULT **********/
+DROP SEQUENCE result_seq;
+CREATE SEQUENCE result_seq
+START WITH 1
+    MINVALUE 1
+    INCREMENT BY 1
+    CACHE 10;
 /************************************ ALL THE TRIGGERS ************************************/
 
 /****************** TRIGGERS FOR STUDENT TABLE ******************/
