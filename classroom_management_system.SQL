@@ -24,4 +24,6 @@ ID:201400059
 @import_table\07.imp_message.SQL
 @import_table\08.imp_result.SQL
 COMMIT;
+-- viewing the information from the database --
+@query_main.SQL
 EXIT;  --the script exits here--

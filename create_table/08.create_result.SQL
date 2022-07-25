@@ -9,6 +9,6 @@ CREATE TABLE result
     result_date DATE NOT NULL,
     exam_date DATE NOT NULL,
     PRIMARY KEY(result_id),
-    FOREIGN KEY(student_id) REFERENCES student(student_id),
-    FOREIGN KEY(teacher_id) REFERENCES teacher(teacher_id)
+    FOREIGN KEY(student_id) REFERENCES student(student_id) ON DELETE CASCADE,
+    FOREIGN KEY(teacher_id) REFERENCES teacher(teacher_id) ON DELETE CASCADE
 )
