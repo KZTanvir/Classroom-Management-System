@@ -81,9 +81,14 @@ FROM newsfeed,all_users
        newsfeed.feed_subject != 'TEACHER REGISTRATION!'
        )
     ORDER BY newsfeed.user_id;
+    
 DELETE FROM student WHERE student_id = 10;
+
 SELECT * FROM all_users;
+
 INSERT INTO newsfeed_comment
     VALUES(newsfeed_comment_seq.NEXTVAL,2,2,'WELCOME HERE TOO!',SYSDATE,'ACTIVE');
+    
 SELECT * FROM newsfeed;
+
 SELECT * FROM newsfeed_comment;
