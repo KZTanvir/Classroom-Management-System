@@ -2,6 +2,8 @@ INSERT INTO student
     VALUES (
     NULL,
     'TANVIR',
+    NULL,
+    NULL,
     'HABIBUR RAHMAN',
     'REBEKA SULTANA',
     NULL,
@@ -13,8 +15,10 @@ INSERT INTO student
     VALUES (
     NULL,
     'TONOY',
-    'NAZMUL HOSSAIN'
-    ,NULL,
+    NULL,
+    NULL,
+    'NAZMUL HOSSAIN',
+    NULL,
     NULL,
     56,
     9,
@@ -24,6 +28,8 @@ INSERT INTO student
     VALUES (
     NULL,
     'ALICIA',
+    NULL,
+    NULL,
     'PETER PERKER',
     'GWEN STACY',
     '112B,BEAKER STREET',
@@ -35,6 +41,8 @@ INSERT INTO student
     VALUES (
     NULL,
     'GWENA',
+    NULL,
+    NULL,
     'PETER WALKER',
     'ALICE BOQUET',
     '112B,BEAKRE STREET',
@@ -46,6 +54,8 @@ INSERT INTO student
     VALUES (
     NULL,
     'ALICIANA2',
+    NULL,
+    NULL,
     'ANTHONY',
     'MANDY',
     'NEW YORK',
@@ -57,17 +67,21 @@ INSERT INTO student
     VALUES (
     NULL,
     'GWEN',
+    NULL,
+    NULL,
     'PETER WALKER',
     'ALICE BOQUET',
     'WORKERS STREET',
     05,
-    30,
+    3,
     2015
     );
 INSERT INTO student 
     VALUES (
     NULL,
     'ANTHONY',
+    NULL,
+    NULL,
     'TONY STARK',
     NULL,
     'WAPDA ROAD,
@@ -80,6 +94,8 @@ INSERT INTO student
     VALUES (
     NULL,
     'MD.KAMRUZZAMAN',
+    'Kamruzzaman',
+    'Tanvir',
     'HABIBUR RAHAMAN',
     'REBEKA SULTANA',
     'WAPDA ROAD, ASHUGANJ, BRAHMANBARIA, BANGALDESH',
@@ -91,6 +107,8 @@ INSERT INTO student
     VALUES (
     NULL,
     'GLAMORA',
+    NULL,
+    NULL,
     'THOMAS ALVA',
     'GWEN TENISON',
     'NEW YORK',
@@ -102,6 +120,8 @@ INSERT INTO student
     VALUES (
     NULL,
     'TONY STARK',
+    NULL,
+    NULL,
     'ANTHONEY STARK',
     'GWENDOLIN STACY',
     'WORKERS STREET',
