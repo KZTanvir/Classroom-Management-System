@@ -1,6 +1,9 @@
 # Classroom-Management-System
->>todo update two triggers from student and teacher to all_users 
->>and use if else in triggers body for updating the user_name
->>for making the all_users table to update both students and teachers TABLE
->>connecting newsfeed and comments table  with comment count table to newsfeed
->>import data into the project
+
+ID: 201400059
+Name: MD.Kamruzzaman 
+
+>>Run classroom_management_system.sql first!
+>>If shows error then run all files from the create_table folder directly (according the the file names
+>>Now run all file from other directory as the names of the directory suggests
+>>Run query main to get the results from the directory
