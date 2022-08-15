@@ -1,6 +1,8 @@
 /* 
-NAME:MD.KAMRUZZAMAN
-ID:201400059
+EASTERN UNIVERSITY
+TEACHER: TANZIM TAMANNA SHITU
+STUDENT: NAME:MD.KAMRUZZAMAN
+STUDENT_ID: 201400059
 */
 
 -- DROP AND CREATE TABLES --
@@ -26,4 +28,5 @@ ID:201400059
 COMMIT;
 -- viewing the information from the database --
 @query_main.SQL
+@view_and_join.sql
 EXIT;  --the script exits here--

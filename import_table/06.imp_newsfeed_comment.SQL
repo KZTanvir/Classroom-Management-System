@@ -88,4 +88,13 @@ INSERT INTO newsfeed_comment
     '3-JUNE-2022',
     NULL
     );
+INSERT INTO newsfeed_comment
+    VALUES(
+    newsfeed_comment_seq.NEXTVAL,
+    24,
+    2,
+    'WELCOME HERE AGAIN', 
+    '3-JUNE-2022',
+    NULL
+    );
 

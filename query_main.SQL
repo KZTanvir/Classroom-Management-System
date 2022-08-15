@@ -33,11 +33,41 @@ FROM newsfeed,newsfeed_comment,all_users
     (newsfeed_comment.user_id = all_users.user_id)
     ORDER BY newsfeed.user_id DESC;
 
-SELECT 
-    COUNT(student.student_id)
+SELECT --counting total students
+    COUNT(student.student_id) AS TOTAL_STUDENT
 FROM student;
+SELECT --counting DISTINCT total students
+    COUNT(DISTINCT student.student_id) AS TOTAL_STUDENT
+FROM student;
+SELECT
+    SUM(newsfeed.comments) AS TOTAL_COMMENTS
+FROM newsfeed
+    WHERE newsfeed.comments>=1;
+SELECT --all student average
+    result.student_id,
+    AVG(result.main_result) AS AVERAGE_RESULT
+FROM result
+    GROUP BY
+    result.student_id
+    ORDER BY
+    result.student_id;
+SELECT --highest result with student id and subject WITH MAX
+    result.student_id,
+    result.result_subject,
+    result.main_result AS HIGHEST_RESULT
+FROM result
+    WHERE
+    result.main_result 
+    IN
+    (
+    SELECT 
+        MAX(result.main_result)
+    FROM result 
+        GROUP BY 
+        result.RESULT_SUBJECT
+    );
 
-SELECT 
+SELECT --commented posts in the newsfeed project
     newsfeed.feed_creator,
     newsfeed.feed_subject,
     newsfeed.feed_post,
@@ -88,7 +118,5 @@ SELECT * FROM all_users;
 
 INSERT INTO newsfeed_comment
     VALUES(newsfeed_comment_seq.NEXTVAL,2,2,'WELCOME HERE TOO!',SYSDATE,'ACTIVE');
-    
 SELECT * FROM newsfeed;
-
 SELECT * FROM newsfeed_comment;
