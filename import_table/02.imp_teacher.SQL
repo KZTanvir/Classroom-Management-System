@@ -108,3 +108,4 @@ INSERT INTO teacher
     DEFAULT,
     5540
     );
+    

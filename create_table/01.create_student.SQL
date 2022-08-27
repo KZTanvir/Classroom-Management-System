@@ -9,8 +9,7 @@ CREATE TABLE student
     student_roll INT CHECK(student_roll>0 AND student_roll<=100),
     student_class NUMBER(3) CHECK(student_class>0 AND student_class<=10),
     student_year NUMBER(4) DEFAULT 0000,
-    PRIMARY KEY(student_id), --primary key declaration--
-    UNIQUE (student_roll,student_class)
+    PRIMARY KEY(student_id) --primary key declaration--
 );
 
 

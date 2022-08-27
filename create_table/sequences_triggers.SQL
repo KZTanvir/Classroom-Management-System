@@ -72,7 +72,7 @@ CREATE OR REPLACE TRIGGER student_insert
     FOR EACH ROW
 BEGIN
    INSERT INTO all_users
-   VALUES(:NEW.student_id,:NEW.student_name, 'STUDENT', DEFAULT);
+   VALUES(:NEW.student_id,:NEW.student_name, 'STUDENT', DEFAULT, DEFAULT);
 END;
 
 --trigger for table delete TANVIR.STUDENT
@@ -125,7 +125,7 @@ CREATE OR REPLACE TRIGGER teacher_insert
     FOR EACH ROW
 BEGIN
    INSERT INTO all_users
-   VALUES(:NEW.teacher_id,:NEW.teacher_name, 'TEACHER', DEFAULT);
+   VALUES(:NEW.teacher_id,:NEW.teacher_name, 'TEACHER', DEFAULT, DEFAULT);
 END;
 --trigger for table delete TANVIR.TEACHER
 CREATE OR REPLACE TRIGGER teacher_delete

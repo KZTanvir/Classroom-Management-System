@@ -120,3 +120,4 @@ INSERT INTO newsfeed_comment
     VALUES(newsfeed_comment_seq.NEXTVAL,2,2,'WELCOME HERE TOO!',SYSDATE,'ACTIVE');
 SELECT * FROM newsfeed;
 SELECT * FROM newsfeed_comment;
+SELECT * FROM all_users;
