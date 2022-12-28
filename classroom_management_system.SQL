@@ -16,7 +16,7 @@ STUDENT_ID: 201400059
 @create_table\07.create_message.sql
 @create_table\08.create_result.sql
 @create_table\sequences_triggers.sql  -- ADDS SEQUENCES AND TRIGGERS
-/*
+
 ----------------------------------------
 -- IMPORTING DATA ON TABLES --
 @import_table\01.imp_student.SQL
@@ -31,4 +31,3 @@ COMMIT;
 @query_main.SQL
 @view_and_join.sql
 EXIT;  --the script exits here--
-*/
